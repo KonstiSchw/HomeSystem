@@ -1,0 +1,47 @@
+name: HomeSystem
+version: '1.0.0'
+main: at.konsti.landania.homesystem.spigot.HomeSystem
+api-version: 1.19
+authors: [ KonstantinSchwaighofer ]
+description: Landania Testaufgabe - Homesystem
+
+commands:
+  sethome:
+    description: Setze einen Wegpunkt an deinem jetzigen Standort
+    permission: homesystem.set
+
+  delhome:
+    description: Entferne einen Wegpunkt
+    permission: homesystem.del
+
+  home:
+    description: Teleportiere dich zu einem deiner Wegpunkte
+    permission: homesystem.port
+
+  homes:
+    description: Zeige dir alle Wegpunkte an
+    permission: homesystem.homes
+
+permissions:
+  homesystem.*:
+    default: false
+    children:
+      homesystem.set: true
+      homesystem.del: true
+      homesystem.port: true
+      homesystem.homes: true
+
+  homesystem.set:
+    default: op
+
+  homesystem.del:
+    default: op
+
+  homesystem.port:
+    default: op
+
+  homesystem.homes:
+    default: op
+
+
+
